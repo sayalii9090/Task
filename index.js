@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
     // Default endpoint
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ message: 'Hello, this is a basic HTTP endpoint!' }));
+    res.end(JSON.stringify({ message: 'Hello, this is a basic HTTP endpoint! for demo' }));
   }
 });
 
