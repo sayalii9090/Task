@@ -65,5 +65,5 @@ jobs:
           image: ${{ steps.check_files.outputs.**image** }}
           
       - name: updating task-definition file
-        run: cat ${{ steps.demo.outputs.task-definition }} > taskdefinition.json
-		
+        run: |
+	  cat ${{ steps.demo.outputs.task-definition }} > taskdefinition.json
