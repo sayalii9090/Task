@@ -57,15 +57,15 @@ jobs:
           aws ecs describe-task-definition --task-definition task-1 --query taskDefinition > taskdefinition.json
 
       - name: new image in ECS taskdefinition
-        id: demo
+        id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: taskdefinition.json
-          container-name: ${{ env.CONTAINER_NAME }}
+          container-name: task
           image: ${{ steps.build-image.outputs.image }}
           
       - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@df9643053eda01f169e64a0e60233aacca83799a
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: ${{ env.ECS_SERVICE }}
