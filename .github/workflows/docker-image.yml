@@ -67,3 +67,4 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           source: image.tar.gz
           target: /home/${{ secrets.EC2_USER }}/image.tar.gz
+          timeout: 120s
