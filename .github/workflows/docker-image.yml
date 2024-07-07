@@ -31,7 +31,11 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/task:$IMAGE_TAG .
           docker push $ECR_REGISTRY/task:$IMAGE_TAG
-
+  
+  deploy:
+    runs-on: ubuntu-latest
+   
+    steps:
       - name: SSH into EC2 instance and deploy
         uses: appleboy/ssh-action@master
         with:
