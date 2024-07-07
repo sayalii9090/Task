@@ -33,6 +33,7 @@ jobs:
           docker push $ECR_REGISTRY/task:$IMAGE_TAG
   
   deploy:
+    needs: build-and-push
     runs-on: ubuntu-latest
    
     steps:
