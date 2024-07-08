@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
     // Default endpoint
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ message: 'Hello World, this is a nodejs application for demo purpose !!!' }));
+    res.end(JSON.stringify({ message: 'Hello World, this is a Nodejs application for demo purpose !' }));
   }
 });
 
